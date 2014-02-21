@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <hlib/hlib.h>
+#include <string.h>
+
+
+jsdef printIcon()
+{
+<p>"Print" dialog with printer icon:</p>
+<a href="JavaScript:window.print();"><img src="/pix/printer_icon.gif" border="0" width="17" height="17" align="middle" alt="Print Version" /></a>
+<div class="more-info">
+<p>More info: <a href="/javascript/javascript_print.cfm">JavaScript Print</a></p>
+</div>
+}
+
+void setup(Display *display, Event *event, void *data){
+	    printIcon(display);
+}
+
+
+
+int main(int argc, char *argv[])
+{
+    Display *display = NULL;
+    char *host = "localhost";
+    int port = 9090;
+
+
+    display = OpenDisplay("localhost", 9090);
+    if (display == NULL) {
+        fprintf(stderr, "Unable to connect to display %s:%d\n", host, port);
+        exit(1);
+    }
+     
+    /* Register Callbacks */
+ /*   RegisterCallback(display, ExposeEventType, expose_event, NULL);
+    RegisterCallback(display, MouseMoveEventType, mouse_move, NULL); */
+    RegisterCallback(display, SetupEventType, setup, NULL);
+
+    
+    MainLoop(display);
+
+    CloseDisplay(display);
+    return 0;
+}

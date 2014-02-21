@@ -1,0 +1,25 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<html>
+	<head>
+		<link rel="Stylesheet"type="text/css" href="jqueryui/css/redmond/jquery-ui-1.8.17.custom.css" />
+		<script type="text/javascript" src="jqueryui/js/jquery-1.7.1.min.js" ></script>
+		<script type="text/javascript" src="jqueryui/js/jquery-ui-1.8.17.custom.min.js"></script>
+		<script type="text/javascript" src="jqueryui/js/processing-1.3.6.js" ></script>
+		<link type="text/css" rel="stylesheet" href="minicolor/jquery.miniColors.css" />
+		<script type="text/javascript" src="minicolor/jquery.miniColors.js"></script>
+		<style>
+			.draggable { width: 500px; height: 500px; padding: 10px; padding-top: 30px;}
+			input {border: solid black 6px;}
+		</style>
+		<script>
+$(document).ready( function() {
+	$(".color-picker").miniColors();
+});
+		</script>
+	</head>
+	<body>
+		<input type="hidden" name="color1" class="color-picker"/>
+	</body>
+</html>
+

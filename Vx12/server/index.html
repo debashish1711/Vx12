@@ -1,0 +1,27 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>vx12 Application</title>
+        <!--link type="text/css" href="jqueryui/css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="Stylesheet"/-->
+        <link type="text/css" href="jqueryui/css/default.css" rel="Stylesheet"/>    
+        <link type="text/css" href="%(appid)s/custom.css" rel="Stylesheet"/>
+        <script type="text/javascript" src="jqueryui/js/jquery-1.7.1.min.js" ></script>
+        <!--script type="text/javascript" src="jqueryui/js/jquery-ui-1.8.16.custom.min.js"></script-->
+        <!--script type="text/javascript" src="jqueryui/js/processing-1.3.6.js" ></script-->
+        <script type="text/javascript" src="jqueryui/js/draw_pr.js" ></script>
+        <script type="text/javascript" src="jqueryui/js/base64.js" ></script>
+        <script type="text/javascript" src="scripttest.js"></script>
+        <!--script language='javascript'>
+            var ws_server = "ws://localhost:7070%(id)s";
+        </script-->
+        <style>
+            body {margin: 0px;}
+        </style>
+    </head>
+    <body>
+        <div class="ui-widget-content" style="border: solid red; padding:0px; margin:0px; height:500px; width:500px;" >
+            <canvas id="root" style="border: solid 1px #000000;" data-processing-sources="/%(appid)s/test.pde"> </canvas>           
+        </div>
+    </body>
+</html>
+

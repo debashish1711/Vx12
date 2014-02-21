@@ -1,0 +1,14 @@
+d=document.createElement('div');
+$(d).addClass(classname)
+    .html("TEXT")
+    .appendTo($("#output")) //main div
+    .click(function(){
+        $(this).remove();
+    })
+    .hide()
+    .slideToggle(300)
+    .delay(2500)
+    .slideToggle(300)
+    .queue(function() {
+        $(this).remove();
+    });

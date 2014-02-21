@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>vx12 Application</title>
+        <link type="text/css" rel="Stylesheet" href="jqueryui/css/redmond/jquery-ui-1.8.17.custom.css" />
+        <link type="text/css" rel="Stylesheet" href="jqueryui/css/default.css" />
+        <link type="text/css" rel="Stylesheet" href="2/custom.css" id="app" />
+        <script type="text/javascript" src="jqueryui/js/jquery-1.7.1.min.js" ></script>
+        <script type="text/javascript" src="jqueryui/js/jquery-ui-1.8.17.custom.min.js"></script>
+        <script type="text/javascript" src="jqueryui/js/processing-1.3.6.js" ></script> 
+        <script type="text/javascript" src="jqueryui/js/draw_functions.js" ></script>
+        <script type="text/javascript" src="jqueryui/js/key_mouse.js" ></script>
+        <script type="text/javascript" src="jqueryui/js/base64.js" ></script>
+	<link type="text/css" rel="stylesheet" href="jqueryui/minicolors/jquery.miniColors.css" />
+	<script type="text/javascript" src="jqueryui/minicolors/jquery.miniColors.min.js"></script>
+        <script type="text/javascript" src="scripttest.js"></script>
+        <script language='javascript'>
+         // var ws_server = "ws://localhost:7070%(id)s";
+          var ws_server = "ws://localhost:7070";
+            var ws_video = new WebSocket("ws://localhost:7070/video");
+            $(function() {
+                var image = document.getElementById('image');
+                ws_video.onmessage = function (e) {
+                    image.src = window.URL.createObjectURL(e.data);
+                };
+            });
+        </script >
+        <style>
+            body {margin: 4px;}
+        </style>
+    </head>
+    <body>
+        <div class="ui-widget-content draggable" style="border: transparent; padding:0px; margin:0px; height:500px; width:500px;background:transparent;" >
+            <canvas id="root" style="border: solid 0px #000000; position: absolute;"></canvas>
+            <img id="image" style="padding-left:1px;padding-top:1px;" height="480" width="640">
+        </div>
+        <script language='javascript'>          //  drawMenu("70px","80px");
+        </script>
+    </body>
+</html>
+

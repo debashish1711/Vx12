@@ -1,0 +1,15 @@
+
+// This is a test
+
+jsdef test(int a, char *ctr) {
+
+THis is some Javascript code.. actually a function.
+
+}
+
+
+main() {
+
+	test(10, "dfdfd");
+}
+
