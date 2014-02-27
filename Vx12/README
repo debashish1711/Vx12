@@ -8,5 +8,5 @@ cd ../clients/[basic|files]
 make
 
 ========== RUNNING ========== 
-server: cd server; twistd -noy vx.tac
+server: cd server; python start.py
 client: cd client; ./client
